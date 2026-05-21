@@ -139,14 +139,14 @@ function updateCartUI() {
   }
 
   footerEl.style.display = "block";
-  totalEl.textContent = getCartTotal() + " MAD";
+  totalEl.textContent = getCartTotal() + " SAR";
 
   itemsEl.innerHTML = cart.map(item => `
     <div class="cart-item">
       <div class="cart-item-thumb">${item.emoji}</div>
       <div class="cart-item-info">
         <div class="cart-item-name">${item.name}</div>
-        <div class="cart-item-price">${item.price} MAD ${item.size ? '— ' + item.size : ''}</div>
+        <div class="cart-item-price">${item.price} SAR ${item.size ? '— ' + item.size : ''}</div>
         <div class="cart-item-qty">
           <button class="qty-btn" onclick="changeQty(${item.id},'${item.size}',-1)">−</button>
           <span class="qty-num">${item.qty}</span>
@@ -230,7 +230,7 @@ function renderProducts() {
         <div class="product-footer">
           <div class="product-price">
             ${p.price} <span>${p.currency}</span>
-            ${p.oldPrice ? `<span class="old-price">${p.oldPrice} MAD</span>` : ''}
+            ${p.oldPrice ? `<span class="old-price">${p.oldPrice} SAR</span>` : ''}
           </div>
           <button class="add-to-cart" onclick="quickAdd(event,${p.id})">
             🛒 أضف
@@ -276,7 +276,7 @@ function openModal(id) {
     closeModalDirect();
   };
   document.getElementById("modalWA").onclick = () => {
-    openWhatsApp(`أريد طلب: ${currentProduct.name} - المقاس: ${selectedSize} - السعر: ${currentProduct.price} MAD`);
+    openWhatsApp(`أريد طلب: ${currentProduct.name} - المقاس: ${selectedSize} - السعر: ${currentProduct.price} SAR`);
   };
 
   document.getElementById("modalOverlay").classList.add("open");
@@ -316,8 +316,8 @@ function openWhatsApp(message) {
 }
 
 function buildOrderMessage() {
-  const lines = cart.map(i => `• ${i.name} (${i.size}) × ${i.qty} = ${i.price * i.qty} MAD`);
-  return `مرحباً! أريد طلب المنتجات التالية:\n\n${lines.join("\n")}\n\nالإجمالي: ${getCartTotal()} MAD\n\nشكراً 🙏`;
+  const lines = cart.map(i => `• ${i.name} (${i.size}) × ${i.qty} = ${i.price * i.qty} SAR`);
+  return `مرحباً! أريد طلب المنتجات التالية:\n\n${lines.join("\n")}\n\nالإجمالي: ${getCartTotal()} SAR\n\nشكراً 🙏`;
 }
 
 document.getElementById("checkoutBtn").addEventListener("click", () => {
