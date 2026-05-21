@@ -312,7 +312,7 @@ function quickAdd(e, id) {
 function openWhatsApp(message) {
   const num = STORE_CONFIG.whatsappNumber;
   const url = `https://wa.me/${num}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank");
+  window.location.href = url;
 }
 
 function buildOrderMessage() {
