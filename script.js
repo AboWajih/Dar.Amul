@@ -4,7 +4,7 @@
 
 const STORE_CONFIG = {
   // 📱 رقم واتساب المتجر (بدون + أو 00)
-  whatsappNumber: "0530436522",
+  whatsappNumber: "9660530436522",
 
   // 🏪 اسم المتجر
   storeName: "دار أمول",
